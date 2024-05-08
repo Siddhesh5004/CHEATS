@@ -1,8 +1,6 @@
 import pandas as pd 
 import numpy as np 
-import seaborn as sn 
-import random as rn 
-import matplotlib.pyplot as mat 
+
 from sklearn.model_selection import train_test_split 
 from sklearn.naive_bayes import GaussianNB,MultinomialNB
 from sklearn.metrics import accuracy_score
@@ -13,7 +11,7 @@ DataFrame1
 DataFrame2=pd.read_csv('AirQuality.csv',sep=';') 
 DataFrame2
 
-DataFrame1.isna().sum().sum() #Detect missing values for an array-like object
+DataFrame1.isna().sum().sum() 
 
 DataFrame1.dtypes
 
@@ -34,7 +32,7 @@ DataFrame4.loc[:, 'Date'] = pd.to_datetime(DataFrame4['Date'], format='mixed')
 DataFrame4
 
 DataFrame4.drop_duplicates(inplace=True)
-DataFrame4 #Drop Duplicates
+DataFrame4 
 
 DataFrame1
 
@@ -54,11 +52,11 @@ Merged=pd.concat([DataSet1,DataSet2,DataSet3])
 Merged
 
 #DATA TRANSFORMATION
-DataFrame1.loc[DataFrame1['sex']==1,'sex']='M' #Replacing 1 with M
-DataFrame1.loc[DataFrame1['sex']==0,'sex']='F' #Replacing 0 with F
+DataFrame1.loc[DataFrame1['sex']==1,'sex']='M' 
+DataFrame1.loc[DataFrame1['sex']==0,'sex']='F' 
 DataFrame1.head()
 
 from sklearn.preprocessing import LabelEncoder
 labelencoder=LabelEncoder()
 DataFrame1["sex"]=labelencoder.fit_transform(DataFrame1["sex"])
-DataFrame1 #used to encode categorical variables into numerical labels
+DataFrame1 #used to encode[convert] categorical variables into numerical labels

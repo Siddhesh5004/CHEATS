@@ -38,5 +38,5 @@ plt.xlabel('Category')
 plt.ylabel('Lifetime Post Consumers')
 plt.title('Lifetime Post Consumers by Category')
 plt.tight_layout()  
-plt.show()  # Display the plots
+plt.show() 
 

@@ -1,8 +1,5 @@
 import pandas as pd 
 import numpy as np 
-import seaborn as sn 
-import random as rn 
-import matplotlib.pyplot as mat 
 from sklearn.model_selection import train_test_split 
 from sklearn.naive_bayes import GaussianNB,MultinomialNB
 from sklearn.metrics import accuracy_score
@@ -20,8 +17,8 @@ DataFrame1.dtypes
 DataFrame2.dtypes
 
 #DATA TRANSFORMATION
-DataFrame1.loc[DataFrame1['sex']==1,'sex']='M' #Replacing 1 with M
-DataFrame1.loc[DataFrame1['sex']==0,'sex']='F' #Replacing 0 with F
+DataFrame1.loc[DataFrame1['sex']==1,'sex']='M' 
+DataFrame1.loc[DataFrame1['sex']==0,'sex']='F'
 DataFrame1.head()
 
 from sklearn.preprocessing import LabelEncoder
@@ -43,9 +40,7 @@ DataFrame1
 # MODEL BUILDING
 X_train, X_test, y_train, y_test = train_test_split(DataFrame1.iloc[:,:-1], DataFrame1.iloc[:,-1], test_size = 0.3, random_state = 0)
 X_train.shape, X_test.shape,y_train.shape
-
-gnb = GaussianNB()
-gnb.fit(X_train, y_train)
+nb.fit(X_train, y_train)
 
 y_pred = gnb.predict(X_test)
 y_pred
